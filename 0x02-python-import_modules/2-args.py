@@ -8,7 +8,7 @@ if len_argv == 1:
     str = "argument:"
 if len_argv > 1:
     str = "arguments:"
-
-print("{} {}".format(len_argv, str))
-for i in range(1, len(sys.argv)):
-    print("{}: {}".format(i, sys.argv[i]))
+if __name__ == "__main__":
+    print("{} {}".format(len_argv, str))
+    for i in range(1, len(sys.argv)):
+        print("{}: {}".format(i, sys.argv[i]))
