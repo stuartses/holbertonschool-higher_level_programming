@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdio.h>
+
 /**
  * len_list - Get number of elements of a linked list
  * @head: input linked list
@@ -11,9 +11,6 @@ int len_list(listint_t *head)
 {
 	listint_t *temp;
 	int len = 0;
-
-	if (head == NULL)
-		return (-1);
 
 	temp = head;
 	while (temp != NULL)
@@ -68,6 +65,9 @@ int is_palindrome(listint_t **head)
 	int *arr_list;
 
 	temy = *head;
+	if (*head == NULL)
+		return (1);
+
 	n = len_list(temy);
 
 	if ((n % 2) != 0)
