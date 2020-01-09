@@ -1,12 +1,12 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 class Square:
-    """Creates a size validation
-
-    Args:
-        size: size of square
-    """
-
     def __init__(self, size=0):
+        """Creates a size validation
+
+        Args:
+            size: size of square
+        """
+
         self.__size = size
         if type(size) != int:
             raise TypeError("size must be an integer")
