@@ -8,8 +8,8 @@ class Square:
             position: coordinades of square
         """
 
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -54,6 +54,9 @@ class Square:
             value: tuple of coordinades
         """
 
+        if type(value) != tuple or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
         if type(value[0]) != int or type(value[1]) != int:
             raise TypeError("position must be a tuple of 2 positive integers")
 
@@ -74,9 +77,9 @@ class Square:
             if tupla[1] > 1:
                 print(" " * tupla[1])
 
-            for y in range(self.__size):
+            for y in range(self.size):
                 if tupla[0] > 0:
                     print(" " * tupla[0], end='')
-                for x in range(self.__size):
+                for x in range(self.size):
                     print("#", end='')
                 print()
