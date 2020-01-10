@@ -70,6 +70,7 @@ class Square:
 
         if self.size == 0:
             print()
+            return
         else:
             tupla = self.position
             if tupla[1] == 1:
