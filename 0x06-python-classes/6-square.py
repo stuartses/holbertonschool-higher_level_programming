@@ -8,28 +8,67 @@ class Square:
             position: coordinades of square
         """
 
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-
         self.__size = size
-
-        if type(position[0]) != int or type(position[1]) != int:
-            raise TypeError("position must be a tuple of 2 positive integers")
-
-        if position[0] < 0 or position[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-
         self.__position = position
+
+    @property
+    def size(self):
+        """Getter for size of square
+
+        Return:
+            The size of square
+        """
+
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """Settter for the value of size
+
+        Args:
+            value: size of square
+        """
+
+        if type(value) != int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+
+    def area(self):
+        """Calculates Area Square """
+
+        return self.__size * self.__size
+
+    @property
+    def position(self):
+        """Get coordinades of Square"""
+
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """Set coordinades
+
+        Args:
+            value: tuple of coordinades
+        """
+
+        if type(value[0]) != int or type(value[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+        self.__position = value
 
     def my_print(self):
         """Prints the Square with hash # """
 
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
-            tupla = self.__position
+            tupla = self.position
             if tupla[1] == 1:
                 print()
             if tupla[1] > 1:
