@@ -8,55 +8,20 @@ class Square:
             position: coordinades of square
         """
 
-        self.__size = size
-        self.__position = position
-
-    @property
-    def size(self):
-        """Getter for size of square
-
-        Return:
-            The size of square
-        """
-
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        """Settter for the value of size
-
-        Args:
-            value: size of square
-        """
-
-        if type(value) != int:
+        if type(size) != int:
             raise TypeError("size must be an integer")
-        if value < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
 
-    def area(self):
-        """Calculates Area Square """
+        self.__size = size
 
-        return self.__size * self.__size
-
-    @property
-    def position(self):
-        """Get coordinades of Square"""
-
-        return self.__position
-
-    def position(self, value):
-        """Set coordinades
-
-        Args:
-            value: tuple of coordinades
-        """
-
-        if type(value[0]) != int or type(value[1]) != int:
+        if type(position[0]) != int or type(position[1]) != int:
             raise TypeError("position must be a tuple of 2 positive integers")
 
-        self.__position = value
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+        self.__position = position
 
     def my_print(self):
         """Prints the Square with hash # """
