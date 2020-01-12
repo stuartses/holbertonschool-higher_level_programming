@@ -10,6 +10,7 @@ By Stuart Echeverry
 
 """
 
+
 def add_integer(a, b=98):
     """Functions that adds two integers
 
