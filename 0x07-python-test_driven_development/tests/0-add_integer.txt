@@ -32,16 +32,23 @@ This is an test text file.  First import
 
 5. Without arguments:
 
+   >>> add_integer()
+   Traceback (most recent call last):
+   TypeError: add_integer() missing 1 required positional argument: 'a'
+
+6. With argument None:
+
    >>> add_integer(None)
    Traceback (most recent call last):
    TypeError: a must be an integer
 
-6. With float numbers:
+
+7. With float numbers:
 
      >>> add_integer(100.3, -2)
      98
 
-7. With No float and not Integer:
+8. With No float and not Integer:
 
      >>> add_integer(4, "School")
      Traceback (most recent call last):
