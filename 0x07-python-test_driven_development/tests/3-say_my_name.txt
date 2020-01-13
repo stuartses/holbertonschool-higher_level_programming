@@ -1,0 +1,62 @@
+The ``3-say_my_name.txt`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+This is an test text file.  First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+1. Full Name:
+
+   >>> say_my_name("Jhon", "Smith")
+   My name is Jhon Smith
+
+2. Last name is ommited
+
+   >>> say_my_name("Ole")
+   My name is Ole 
+
+
+3. Fisrt Name is not String Type
+
+   >>> say_my_name(12, "Nydhal")
+   Traceback (most recent call last):
+   TypeError: first_name must be a string
+
+
+4. Las Name is not String Type
+
+   >>> say_my_name("Ole", 1111)
+   Traceback (most recent call last):
+   TypeError: last_name must be a string
+
+
+5. Fist Name is None:
+
+   >>> say_my_name(None, 1111)
+   Traceback (most recent call last):
+   TypeError: first_name must be a string
+
+
+6. Last Name is None:
+
+   >>> say_my_name("Sherab", None)
+   Traceback (most recent call last):
+   TypeError: last_name must be a string
+
+
+7. First Name and Last Name are None:
+
+   >>> say_my_name(None, None)
+   Traceback (most recent call last):
+   TypeError: first_name must be a string
+
+
+8. First Name and Last Name are not String Type:
+
+   >>> say_my_name(1, 2)
+   Traceback (most recent call last):
+   TypeError: first_name must be a string
