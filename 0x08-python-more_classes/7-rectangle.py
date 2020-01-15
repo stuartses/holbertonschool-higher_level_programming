@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """7. Change representation
-This module change the print symbol
+This module changes the print symbol
 
 Corresponds to Task 7.
 Holberton School
@@ -98,6 +98,9 @@ class Rectangle:
         Return:
             Perimeter of rectangle 2 * (Width + Height)
         """
+
+        if self.__width == 0 or self.__height == 0:
+            return 0
 
         return 2 * (self.__width + self.__height)
 

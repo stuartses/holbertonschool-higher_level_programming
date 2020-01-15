@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """6. How many instances
-This module that calculates area and perimeter of a rectangle.
+This module calculates area and perimeter of a rectangle.
 And counts instances
 
 Corresponds to Task 6.
@@ -98,6 +98,9 @@ class Rectangle:
         Return:
             Perimeter of rectangle 2 * (Width + Height)
         """
+
+        if self.__width == 0 or self.__height == 0:
+            return 0
 
         return 2 * (self.__width + self.__height)
 

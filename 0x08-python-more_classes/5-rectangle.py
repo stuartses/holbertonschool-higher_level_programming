@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """5. Detect instance deletion
-This module that calculates area and perimeter of a rectangle.
+This module calculates area and perimeter of a rectangle.
 Implements delete instance
 
 Corresponds to Task 5.
@@ -95,6 +95,9 @@ class Rectangle:
         Return:
             Perimeter of rectangle 2 * (Width + Height)
         """
+
+        if self.__width == 0 or self.__height == 0:
+            return 0
 
         return 2 * (self.__width + self.__height)
 
