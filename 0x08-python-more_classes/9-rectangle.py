@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-"""8. Compare rectangles
-This module compares rectangles usin static methond
+"""9. A square is a rectangle
+This module creates a new rectangle with witdh=height
+Using class method
 
-Corresponds to Task 8.
+Corresponds to Task 9.
 Holberton School
 Foundations - Higher-level programming - Python
 By Stuart Echeverry
@@ -159,3 +160,16 @@ class Rectangle:
 
         if area_1 == area_2:
             return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        """Creates a square based in Rectangle Class
+
+        Args:
+            size: size of square
+
+        Return:
+            New Rectangle Instance
+        """
+
+        return Rectangle(size, size)
