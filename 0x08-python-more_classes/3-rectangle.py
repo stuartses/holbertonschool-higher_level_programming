@@ -121,6 +121,10 @@ class Rectangle:
         """
 
         str_x = ""
+
+        if self.__width == 0 or self.__height == 0:
+            return str_x
+
         for x in range(self.__height):
             str_x += "#" * self.__width
 
