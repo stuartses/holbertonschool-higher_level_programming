@@ -24,10 +24,10 @@ def add_integer(a, b=98):
     """
 
 
-    if type(a) != int and type(a) != float or a == None:
+    if (type(a) != int and type(a) != float) or a == float('nan'):
         raise TypeError("a must be an integer")
 
-    if type(b) != int and type(b) != float or b == None:
+    if (type(b) != int and type(b) != float) or b == float('nan'):
         raise TypeError("b must be an integer")
 
     result = a + b
