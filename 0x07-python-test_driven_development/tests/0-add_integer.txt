@@ -57,3 +57,27 @@ This is an test text file.  First import
      >>> add_integer("Holberton", 1)
      Traceback (most recent call last):
      TypeError: a must be an integer
+
+9. With a float('inf'):
+
+   >>> add_integer(float('inf'))
+   Traceback (most recent call last):
+   OverflowError: cannot convert float infinity to integer
+
+10. With b float('inf'):
+
+   >>> add_integer(23, float('inf'))
+   Traceback (most recent call last):
+   OverflowError: cannot convert float infinity to integer
+
+11. With a float('nan'):
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+12. With b float('nan'):
+
+    >>> add_integer(23, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
