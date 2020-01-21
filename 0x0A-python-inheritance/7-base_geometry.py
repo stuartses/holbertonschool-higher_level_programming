@@ -9,6 +9,9 @@ By Stuart Echeverry
 
 
 class BaseGeometry:
+    """Class BaseGeometry
+    Defines Geometry"""
+
     def area(self):
         """Defines area"""
 

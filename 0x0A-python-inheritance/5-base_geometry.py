@@ -9,4 +9,7 @@ By Stuart Echeverry
 
 
 class BaseGeometry:
+    """Class BaseGeometry
+    Empty Class"""
+
     pass
