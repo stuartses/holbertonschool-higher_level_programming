@@ -77,4 +77,4 @@ This is an test text file.  First import
    >>> my_list.append(2)
    >>> my_list.print_sorted()
    Traceback (most recent call last):
-   TypeError: '<' not supported between instances of 'int' and 'NoneType'
+   TypeError: unorderable types: int() < NoneType()
