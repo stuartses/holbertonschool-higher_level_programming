@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""9. Full rectangle
+"""10. Square #1
 Inherits from Rectangle in Task 9
 Corresponds to Task 10.
 Holberton School
