@@ -9,6 +9,19 @@ This is an test text file.  First import
 
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+0. Call Area method:
+
+   >>> bg = BaseGeometry()
+   >>> bg.area()
+   Traceback (most recent call last):
+   Exception: area() is not implemented
+
+   Without arguments:
+
+   >>> bg.integer_validator()
+   Traceback (most recent call last):
+   TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
 1. If name is string and value an integer:
 
    >>> bg = BaseGeometry()
@@ -58,3 +71,38 @@ This is an test text file.  First import
 
    >>> bg = BaseGeometry()
    >>> bg.integer_validator(None, 4)
+
+9. Without value:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("age")
+   Traceback (most recent call last):
+   TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+10. With a Tupla:
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+11. With a list as argument:
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", [3])
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+12. With Bool:
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", True)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+13. With Dictionary:
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    TypeError: age must be an integer
