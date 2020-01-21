@@ -1,0 +1,60 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+This is an test text file.  First import
+``BaseGeometry`` from the ``7-base_geometry`` module:
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+1. If name is string and value an integer:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("my_int", 12)
+
+2. If name is not string:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator(23, 12)
+
+3. If value is not integer:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("name", "John")
+   Traceback (most recent call last):
+   TypeError: name must be an integer
+
+4. If value is zero:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("age", 0)
+   Traceback (most recent call last):
+   ValueError: age must be greater than 0
+
+5. if value is less than zero:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("distance", -4)
+   Traceback (most recent call last):
+   ValueError: distance must be greater than 0
+
+6. If value is float:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("width", 4.89)
+   Traceback (most recent call last):
+   TypeError: width must be an integer
+
+7. If value is None:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("distance", None)
+   Traceback (most recent call last):
+   TypeError: distance must be an integer
+
+8. if Name is None:
+
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator(None, 4)
