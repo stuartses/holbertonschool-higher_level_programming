@@ -16,9 +16,9 @@ def number_of_lines(filename=""):
         filename: input file
     """
 
-    f = open(filename, "r")
     i = 0
-    for line in f:
-        i += 1
+    with open(filename, "r") as f:
+        for line in f:
+            i += 1
 
     return i
