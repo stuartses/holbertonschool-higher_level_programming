@@ -56,6 +56,5 @@ class Student:
             json: dictionary with new data
         """
 
-        self.first_name = json['first_name']
-        self.last_name = json['last_name']
-        self.age = json['age']
+        for keys_js in json.keys():
+            self.__dict__[keys_js] = json[keys_js]
