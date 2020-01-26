@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-""" 2. First Rectangle
+""" Rectangle
 This module creates a class Rectangle.
-Corresponds to Task 2.
+Corresponds to Tasks 2, 3.
 Holberton School
 Foundations - Higher-level programming - Python
 By Stuart Echeverry
@@ -32,7 +32,32 @@ class Rectangle(Base):
             y: y position
         """
 
-        super().__init__(id)
+        super().__init__(id)   # call super() and initializes id
+
+        if type(width) != int:
+            raise TypeError("width must be an integer")
+
+        if width <= 0:
+            raise ValueError("width must be > 0")
+
+        if type(height) != int:
+            raise TypeError("height must be an integer")
+
+        if height <= 0:
+            raise ValueError("height must be > 0")
+
+        if type(x) != int:
+            raise TypeError("x must be an integer")
+
+        if x < 0:
+            raise ValueError("x must be >= 0")
+
+        if type(y) != int:
+            raise TypeError("y must be an integer")
+
+        if y < 0:
+            raise ValueError("y must be >= 0")
+
         self.__width = width
         self.__height = height
         self.__x = x
@@ -45,7 +70,7 @@ class Rectangle(Base):
         return: width
         """
 
-        return self.__wifth
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -54,6 +79,12 @@ class Rectangle(Base):
         Args:
             value: input width
         """
+
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+
+        if value <= 0:
+            raise ValueError("width must be > 0")
 
         self.__width = value
 
@@ -73,6 +104,12 @@ class Rectangle(Base):
             value: input value for height
         """
 
+        if type(value) != int:
+            raise TypeError("height must be an integer")
+
+        if value <= 0:
+            raise ValueError("height must be > 0")
+
         self.__height = value
 
     @property
@@ -91,6 +128,12 @@ class Rectangle(Base):
             value: input x
         """
 
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+
+        if value < 0:
+            raise ValueError("x must be >= 0")
+
         self.__x = value
 
     @property
@@ -108,5 +151,11 @@ class Rectangle(Base):
         Args:
             value: input y
         """
+
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+
+        if value < 0:
+            raise ValueError("y must be >= 0")
 
         self.__y = value
