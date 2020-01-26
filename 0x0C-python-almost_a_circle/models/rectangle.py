@@ -2,7 +2,7 @@
 
 """ Rectangle
 This module creates a class Rectangle.
-Corresponds to Tasks 2-7.
+Corresponds to Tasks 2-9.
 Holberton School
 Foundations - Higher-level programming - Python
 By Stuart Echeverry
@@ -33,39 +33,14 @@ class Rectangle(Base):
         """
 
         super().__init__(id)   # call super() and initializes id
-
-        if type(width) != int:
-            raise TypeError("width must be an integer")
-
-        if width <= 0:
-            raise ValueError("width must be > 0")
-
-        if type(height) != int:
-            raise TypeError("height must be an integer")
-
-        if height <= 0:
-            raise ValueError("height must be > 0")
-
-        if type(x) != int:
-            raise TypeError("x must be an integer")
-
-        if x < 0:
-            raise ValueError("x must be >= 0")
-
-        if type(y) != int:
-            raise TypeError("y must be an integer")
-
-        if y < 0:
-            raise ValueError("y must be >= 0")
-
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
-        """getter fir width
+        """getter for width
 
         return: width
         """
@@ -74,11 +49,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """setter for width
-
-        Args:
-            value: input width
-        """
+        """setter for width"""
 
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -188,19 +159,34 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Update rectangle data grom *args arguments
 
         Args:
             *args: list or argument ordered: id, widht, height, x, y
+            **kwargs: list of key/word arguments
         """
 
-        dict = self.__dict__
-
-        # list with the attributes ordered
-        dict_attr = ['id', '_Rectangle__width', '_Rectangle__height',
-                     '_Rectangle__x', '_Rectangle__y']
-
-        # Move in each arguments and dict_attr, have the same order
-        for i in range(len(args)):
-            dict[dict_attr[i]] = args[i]
+        if args:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[0]
+                if i == 1:
+                    self.__width = args[1]
+                if i == 2:
+                    self.__height = args[2]
+                if i == 3:
+                    self.__x = args[3]
+                if i == 4:
+                    self.__y = args[4]
+        else:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'width' in kwargs:
+                self.__width = kwargs['width']
+            if 'height' in kwargs:
+                self.__height = kwargs['height']
+            if 'x' in kwargs:
+                self.__x = kwargs['x']
+            if 'y' in kwargs:
+                self.__y = kwargs['y']
