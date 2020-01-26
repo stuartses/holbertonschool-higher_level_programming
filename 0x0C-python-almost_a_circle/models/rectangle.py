@@ -186,4 +186,21 @@ class Rectangle(Base):
         """
 
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__width)
+            self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """ Update rectangle data grom *args arguments
+
+        Args:
+            *args: list or argument ordered: id, widht, height, x, y
+        """
+
+        dict = self.__dict__
+
+        # list with the attributes ordered
+        dict_attr = ['id', '_Rectangle__width', '_Rectangle__height',
+                     '_Rectangle__x', '_Rectangle__y']
+
+        # Move in each arguments and dict_attr, have the same order
+        for i in range(len(args)):
+            dict[dict_attr[i]] = args[i]
