@@ -2,7 +2,7 @@
 
 """ Rectangle
 This module creates a class Rectangle.
-Corresponds to Tasks 2, 3.
+Corresponds to Tasks 2-7.
 Holberton School
 Foundations - Higher-level programming - Python
 By Stuart Echeverry
@@ -170,9 +170,13 @@ class Rectangle(Base):
 
     def display(self):
         """prints rectangle in stdout
+        at the position x, y
         """
 
+        print("\n" * self.__y, end='')  # y offset
+
         for i in range(self.__height):
+            print(" " * self.__x, end='')  # x offset
             print("#" * self.__width)
 
     def __str__(self):
