@@ -8,6 +8,8 @@ Foundations - Higher-level programming - Python
 By Stuart Echeverry
 """
 
+import json
+
 
 class Base:
     """Class Base
@@ -32,3 +34,29 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """return json representation
+
+        Args:
+           list_dictionaries: input dictionary
+        """
+
+        dict_json = "[]"
+
+        if list_dictionaries is not None:
+            dict_json = json.dumps(list_dictionaries)
+
+        return dict_json
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """save object in json file
+
+        Args:
+            cls:
+            list_objs: input object
+        """
+
+        print("hello")
+        return list_objs
