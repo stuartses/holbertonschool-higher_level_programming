@@ -2,7 +2,6 @@
 
 """ Square
 This module creates a class Square.
-Corresponds to Tasks 10.
 Holberton School
 Foundations - Higher-level programming - Python
 By Stuart Echeverry

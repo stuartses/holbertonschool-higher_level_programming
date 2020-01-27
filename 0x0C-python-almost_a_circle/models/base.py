@@ -2,7 +2,6 @@
 
 """1. Base class
 Creates the Base Class
-Corresponds to Task 1.
 Holberton School
 Foundations - Higher-level programming - Python
 By Stuart Echeverry
@@ -51,12 +50,35 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """save object in json file
+        """save list of objects in json file
 
         Args:
             cls:
             list_objs: input object
         """
 
-        print("hello")
-        return list_objs
+        filename = cls.__name__ + ".json"
+        dict_list = []
+
+        for obj in list_objs:
+            dict_list.append(obj.to_dictionary())
+
+        json_objs = cls.to_json_string(dict_list)
+
+        with open(filename, "w") as f:
+            f.write(json_objs)
+
+    def from_json_string(json_string):
+        """return dictionary from json string
+
+        Args:
+            json_string: input json
+        Return:
+            Dictionay
+        """
+
+        dict_obj = []
+        if json_string is not None:
+            dict_obj = json.loads(json_string)
+
+        return dict_obj

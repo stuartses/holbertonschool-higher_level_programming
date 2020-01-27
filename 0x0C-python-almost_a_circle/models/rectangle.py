@@ -2,7 +2,6 @@
 
 """ Rectangle
 This module creates a class Rectangle.
-Corresponds to Tasks 2-9.
 Holberton School
 Foundations - Higher-level programming - Python
 By Stuart Echeverry
