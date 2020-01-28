@@ -10,6 +10,7 @@ By Stuart Echeverry
 import unittest
 from models.rectangle import Rectangle
 
+
 class TestRectangle(unittest.TestCase):
     """Test cases for class Rectangle
     """
@@ -57,9 +58,6 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         a = Rectangle(1, 2, 3, 2)
         self.assertRaises(TypeError, a.display, 1)
-
-    def test_update(self):
-        
 
 if __name__ == '__main__':
     unittest.main()
