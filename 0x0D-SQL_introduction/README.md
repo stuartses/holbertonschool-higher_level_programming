@@ -1,2 +1,2 @@
 # 0x0D. SQL - Introduction
-## Project about SQL basics
+## Project about basics in SQL
