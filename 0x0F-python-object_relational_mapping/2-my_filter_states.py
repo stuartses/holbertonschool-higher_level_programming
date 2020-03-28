@@ -18,7 +18,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host='localhost', user=args[1], passwd=args[2],
                          db=args[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name='{}'"
+    cur.execute("SELECT * FROM states WHERE BINAY name='{}'"
                 " ORDER BY id ASC".format(args[4]))
     rows = cur.fetchall()
     for row in rows:
