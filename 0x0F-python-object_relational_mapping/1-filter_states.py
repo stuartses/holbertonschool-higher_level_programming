@@ -12,8 +12,11 @@ By Stuart Echeverry
 if __name__ == "__main__":
     import sys
     import MySQLdb
-    len_argv = len(sys.argv) - 1
+    len_args = len(sys.argv) - 1
     args = sys.argv
+
+    if len_args < 3:
+        exit()
 
     db = MySQLdb.connect(host='localhost', user=args[1], passwd=args[2],
                          db=args[3])
