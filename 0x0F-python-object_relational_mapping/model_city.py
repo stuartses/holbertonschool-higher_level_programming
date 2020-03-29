@@ -11,6 +11,7 @@ By Stuart Echeverry
 from model_state import Base
 import sqlalchemy
 
+
 # create table states and Class City
 class City(Base):
     """Class City
