@@ -9,10 +9,6 @@ from sys import argv
 
 req = urllib.request.Request(argv[1])
 with urllib.request.urlopen(req) as response:
-    the_headers = dict(response.headers._headers)
+    the_headers = response.info()
 
-# Check if the header X-Request-Id exists
-try:
-    print(the_headers['X-Request-Id'])
-except:
-    pass
+print(the_headers.get('X-Request-Id'))
