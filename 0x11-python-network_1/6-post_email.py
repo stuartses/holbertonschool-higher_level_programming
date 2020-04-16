@@ -5,9 +5,11 @@
 from sys import argv
 import requests
 
-url = argv[1]
-email = argv[2]
-data = {'email': email}
 
-r = requests.post(url, data)
-print(r.text)
+if __name__ == '__main__':
+    url = argv[1]
+    email = argv[2]
+    data = {'email': email}
+
+    r = requests.post(url, data)
+    print(r.text)
