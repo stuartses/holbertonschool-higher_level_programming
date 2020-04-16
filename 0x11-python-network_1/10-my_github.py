@@ -1,16 +1,10 @@
 #!/usr/bin/python3
-
 """
-Access to GitHub Api using requests
-Basic Authenication and personal access token
-Is needed a token generated in github with read:user permission (only)
+Task 10 - Use the Github API to display a user's ID
 """
-
-from sys import argv
-import requests
 
 if __name__ == '__main__':
+    import requests
+    from sys import argv
     req = requests.get('https://api.github.com/user', auth=(argv[1], argv[2]))
-
-    req_dict = req.json()
-    print(req_dict['id'])
+    print(req.json().get('id'))
