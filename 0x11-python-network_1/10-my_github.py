@@ -11,8 +11,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 if __name__ == '__main__':
-    req = requests.get('https://api.github.com/users/stuartses',
-                       uth=HTTPBasicAuth(argv[1], argv[2]))
+    req = requests.get('https://api.github.com/user',
+                       auth=HTTPBasicAuth(argv[1], argv[2]))
 
     req_dict = req.json()
     print(req_dict['id'])
