@@ -23,4 +23,4 @@ if __name__ == "__main__":
     with urllib.request.urlopen(req) as response:
         content = response.read()
 
-        print(content.decode('utf-8'))
+    print(content.decode('utf-8'))
