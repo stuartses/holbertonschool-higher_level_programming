@@ -5,6 +5,6 @@ var fs = require('fs');
 // Use fs.readFile() method to read the file
 fs.readFile(process.argv[2], 'utf8', function (err, data) {
   // Display the file content
-  if (err) console.error(err);
+  if (err) console.log(err);
   else console.log(data);
 });
