@@ -13,7 +13,7 @@ request(url, function (err, res, body) {
     const characters = results[i].characters;
     for (let j = 0; j < characters.length; j++) {
       const charac = characters[j].split('/');
-      const id = charac[charac.length - 2];
+      const id = parseInt(charac[charac.length - 2]);
       if (id === 18) count++;
     }
   }
